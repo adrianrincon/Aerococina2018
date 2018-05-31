@@ -9,7 +9,84 @@
     <Property Name="contrasena" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="fecha_registro" Type="datetime" Nullable="false" />
   </EntityType>
+  <EntityType Name="consumos">
+    <Key>
+      <PropertyRef Name="cve_consumo" />
+    </Key>
+    <Property Name="cve_consumo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cve_producto" Type="int" Nullable="false" />
+    <Property Name="cve_empleado" Type="int" Nullable="false" />
+    <Property Name="precio" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="estatus" Type="bit" Nullable="false" />
+    <Property Name="fecha_registro" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="empleados">
+    <Key>
+      <PropertyRef Name="cve_empleado" />
+    </Key>
+    <Property Name="cve_empleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="num_empleado" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="estatus" Type="bit" Nullable="false" />
+    <Property Name="fecha_registro" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="productos">
+    <Key>
+      <PropertyRef Name="cve_producto" />
+    </Key>
+    <Property Name="cve_producto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="precio" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="estatus" Type="bit" Nullable="false" />
+    <Property Name="fecha_registro" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_consumos_empleados">
+    <End Role="empleados" Type="Self.empleados" Multiplicity="1" />
+    <End Role="consumos" Type="Self.consumos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="empleados">
+        <PropertyRef Name="cve_empleado" />
+      </Principal>
+      <Dependent Role="consumos">
+        <PropertyRef Name="cve_empleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_consumos_productos">
+    <End Role="productos" Type="Self.productos" Multiplicity="1" />
+    <End Role="consumos" Type="Self.consumos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="productos">
+        <PropertyRef Name="cve_producto" />
+      </Principal>
+      <Dependent Role="consumos">
+        <PropertyRef Name="cve_producto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="Aerococina2018ModelStoreContainer">
     <EntitySet Name="Configuracion" EntityType="Self.Configuracion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="consumos" EntityType="Self.consumos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="empleados" EntityType="Self.empleados" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="productos" EntityType="Self.productos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_consumos_empleados" Association="Self.FK_consumos_empleados">
+      <End Role="empleados" EntitySet="empleados" />
+      <End Role="consumos" EntitySet="consumos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_consumos_productos" Association="Self.FK_consumos_productos">
+      <End Role="productos" EntitySet="productos" />
+      <End Role="consumos" EntitySet="consumos" />
+    </AssociationSet>
   </EntityContainer>
 </Schema>

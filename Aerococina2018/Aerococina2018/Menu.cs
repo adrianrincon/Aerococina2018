@@ -15,12 +15,20 @@ namespace Aerococina2018
         public Menu()
         {
             InitializeComponent();
+            AutoMapper.Mapper.Initialize(c => c.AddProfile<MappingProfile>());
         }
 
-        private void btnEmpleados_Click(object sender, EventArgs e)
+        private void Menu_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void empleadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Catalogos.Empleados form = new Catalogos.Empleados();
-            form.ShowDialog();
+            form.MdiParent=this;
+            form.StartPosition = FormStartPosition.CenterScreen;
+            form.Show();
         }
     }
 }

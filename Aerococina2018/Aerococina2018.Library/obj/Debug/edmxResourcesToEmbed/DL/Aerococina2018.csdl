@@ -11,5 +11,86 @@
   </EntityType>
   <EntityContainer Name="Aerococina2018Entities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Configuracion" EntityType="Self.Configuracion" />
+    <EntitySet Name="empleados" EntityType="Aerococina2018Model.empleados" />
+    <EntitySet Name="consumos" EntityType="Aerococina2018Model.consumos" />
+    <EntitySet Name="productos" EntityType="Aerococina2018Model.productos" />
+    <EntitySet Name="sysdiagrams" EntityType="Aerococina2018Model.sysdiagrams" />
+    <AssociationSet Name="FK_consumos_empleados" Association="Aerococina2018Model.FK_consumos_empleados">
+      <End Role="empleados" EntitySet="empleados" />
+      <End Role="consumos" EntitySet="consumos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_consumos_productos" Association="Aerococina2018Model.FK_consumos_productos">
+      <End Role="productos" EntitySet="productos" />
+      <End Role="consumos" EntitySet="consumos" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="empleados">
+    <Key>
+      <PropertyRef Name="cve_empleado" />
+    </Key>
+    <Property Name="cve_empleado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="num_empleado" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="estatus" Type="Boolean" Nullable="false" />
+    <Property Name="fecha_registro" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="consumos" Relationship="Aerococina2018Model.FK_consumos_empleados" FromRole="empleados" ToRole="consumos" />
+  </EntityType>
+  <EntityType Name="consumos">
+    <Key>
+      <PropertyRef Name="cve_consumo" />
+    </Key>
+    <Property Name="cve_consumo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cve_producto" Type="Int32" Nullable="false" />
+    <Property Name="cve_empleado" Type="Int32" Nullable="false" />
+    <Property Name="precio" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="estatus" Type="Boolean" Nullable="false" />
+    <Property Name="fecha_registro" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="empleados" Relationship="Aerococina2018Model.FK_consumos_empleados" FromRole="consumos" ToRole="empleados" />
+    <NavigationProperty Name="productos" Relationship="Aerococina2018Model.FK_consumos_productos" FromRole="consumos" ToRole="productos" />
+  </EntityType>
+  <EntityType Name="productos">
+    <Key>
+      <PropertyRef Name="cve_producto" />
+    </Key>
+    <Property Name="cve_producto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="precio" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="estatus" Type="Boolean" Nullable="false" />
+    <Property Name="fecha_registro" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="consumos" Relationship="Aerococina2018Model.FK_consumos_productos" FromRole="productos" ToRole="consumos" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_consumos_empleados">
+    <End Type="Aerococina2018Model.empleados" Role="empleados" Multiplicity="1" />
+    <End Type="Aerococina2018Model.consumos" Role="consumos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="empleados">
+        <PropertyRef Name="cve_empleado" />
+      </Principal>
+      <Dependent Role="consumos">
+        <PropertyRef Name="cve_empleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_consumos_productos">
+    <End Type="Aerococina2018Model.productos" Role="productos" Multiplicity="1" />
+    <End Type="Aerococina2018Model.consumos" Role="consumos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="productos">
+        <PropertyRef Name="cve_producto" />
+      </Principal>
+      <Dependent Role="consumos">
+        <PropertyRef Name="cve_producto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

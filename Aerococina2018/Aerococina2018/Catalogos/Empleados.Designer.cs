@@ -36,13 +36,13 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.rActivo = new System.Windows.Forms.RadioButton();
             this.rBaja = new System.Windows.Forms.RadioButton();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.adjuntarExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.numero_empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha_registro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importarExcelEmpleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -137,10 +137,32 @@
             this.rBaja.Text = "Baja";
             this.rBaja.UseVisualStyleBackColor = true;
             // 
+            // numero_empleado
+            // 
+            this.numero_empleado.DataPropertyName = "num_empleado";
+            this.numero_empleado.HeaderText = "# Empleado";
+            this.numero_empleado.Name = "numero_empleado";
+            // 
+            // nombre
+            // 
+            this.nombre.DataPropertyName = "nombre";
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            // 
+            // estatus
+            // 
+            this.estatus.DataPropertyName = "estatus_descripcion";
+            this.estatus.HeaderText = "Estatus";
+            this.estatus.Name = "estatus";
+            // 
+            // fecha_registro
+            // 
+            this.fecha_registro.DataPropertyName = "fecha_registro";
+            this.fecha_registro.HeaderText = "Fecha";
+            this.fecha_registro.Name = "fecha_registro";
+            // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.White;
-            this.menuStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.archivoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -152,36 +174,16 @@
             // archivoToolStripMenuItem
             // 
             this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.adjuntarExcelToolStripMenuItem});
+            this.importarExcelEmpleadosToolStripMenuItem});
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
             this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.archivoToolStripMenuItem.Text = "Archivo";
             // 
-            // adjuntarExcelToolStripMenuItem
+            // importarExcelEmpleadosToolStripMenuItem
             // 
-            this.adjuntarExcelToolStripMenuItem.Name = "adjuntarExcelToolStripMenuItem";
-            this.adjuntarExcelToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
-            this.adjuntarExcelToolStripMenuItem.Text = "Importar excel empleados";
-            // 
-            // numero_empleado
-            // 
-            this.numero_empleado.HeaderText = "# Empleado";
-            this.numero_empleado.Name = "numero_empleado";
-            // 
-            // nombre
-            // 
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
-            // 
-            // estatus
-            // 
-            this.estatus.HeaderText = "Estatus";
-            this.estatus.Name = "estatus";
-            // 
-            // fecha_registro
-            // 
-            this.fecha_registro.HeaderText = "Fecha";
-            this.fecha_registro.Name = "fecha_registro";
+            this.importarExcelEmpleadosToolStripMenuItem.Name = "importarExcelEmpleadosToolStripMenuItem";
+            this.importarExcelEmpleadosToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.importarExcelEmpleadosToolStripMenuItem.Text = "Importar excel empleados";
             // 
             // Empleados
             // 
@@ -197,7 +199,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvEmpleados);
             this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Empleados";
             this.Text = "Empleados";
             this.Load += new System.EventHandler(this.Empleados_Load);
@@ -225,6 +226,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_registro;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem adjuntarExcelToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem importarExcelEmpleadosToolStripMenuItem;
     }
 }

@@ -19,14 +19,15 @@ namespace Aerococina2018.Catalogos
 
         private void Empleados_Load(object sender, EventArgs e)
         {
-
+            ObtenerEmpleados();
         }
 
         private void ObtenerEmpleados()
         {
             try
             {
-
+                dgvEmpleados.AutoGenerateColumns = false;
+                dgvEmpleados.DataSource = Library.BL.EmpleadosBL.ObtenerListaEmpleados();
             }
             catch (Exception ex)
             {
