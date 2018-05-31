@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ed3aa73453ae441199eeb4798a7cd671" Name="Diagram1">
+        <EntityTypeShape EntityType="Aerococina2018Model.Configuracion" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Aerococina2018Model.empleados" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="Aerococina2018Model.consumos" Width="1.5" PointX="6" PointY="0.75" />
+        <EntityTypeShape EntityType="Aerococina2018Model.productos" Width="1.5" PointX="3.75" PointY="4" />
+        <EntityTypeShape EntityType="Aerococina2018Model.sysdiagrams" Width="1.5" PointX="0.75" PointY="4" />
+        <AssociationConnector Association="Aerococina2018Model.FK_consumos_empleados" />
+        <AssociationConnector Association="Aerococina2018Model.FK_consumos_productos" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
