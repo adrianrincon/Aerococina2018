@@ -26,7 +26,7 @@ namespace Aerococina2018
         private void empleadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Catalogos.Empleados form = new Catalogos.Empleados();
-            form.MdiParent=this;
+            form.MdiParent = this;
             form.StartPosition = FormStartPosition.CenterScreen;
             form.Show();
         }

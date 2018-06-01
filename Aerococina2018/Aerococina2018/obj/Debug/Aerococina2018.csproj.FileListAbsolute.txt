@@ -41,3 +41,4 @@ C:\Users\AdrianRincon\Documents\PersonalProjects\Aerococina\Aerococina2018\Aeroc
 C:\Users\AdrianRincon\Documents\PersonalProjects\Aerococina\Aerococina2018\Aerococina2018\obj\Debug\Aerococina2018.csproj.CoreCompileInputs.cache
 C:\Users\AdrianRincon\Documents\PersonalProjects\Aerococina\Aerococina2018\Aerococina2018\obj\Debug\Aerococina2018.exe
 C:\Users\AdrianRincon\Documents\PersonalProjects\Aerococina\Aerococina2018\Aerococina2018\obj\Debug\Aerococina2018.pdb
+C:\Users\AdrianRincon\Documents\PersonalProjects\Aerococina\Aerococina2018\Aerococina2018\obj\Debug\Aerococina2018.Modal.Loading.resources

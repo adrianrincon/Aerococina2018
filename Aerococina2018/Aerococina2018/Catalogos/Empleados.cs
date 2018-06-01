@@ -17,17 +17,17 @@ namespace Aerococina2018.Catalogos
             InitializeComponent();
         }
 
-        private void Empleados_Load(object sender, EventArgs e)
+        private async void Empleados_LoadAsync(object sender, EventArgs e)
         {
-            ObtenerEmpleados();
+            await ObtenerEmpleados();
         }
 
-        private void ObtenerEmpleados()
+        private async Task ObtenerEmpleados()
         {
             try
             {
                 dgvEmpleados.AutoGenerateColumns = false;
-                dgvEmpleados.DataSource = Library.BL.EmpleadosBL.ObtenerListaEmpleados();
+                dgvEmpleados.DataSource = await Library.BL.EmpleadosBL.ObtenerListaEmpleados();
             }
             catch (Exception ex)
             {

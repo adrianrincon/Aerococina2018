@@ -6,18 +6,20 @@ using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using Aerococina2018.Library.DL;
+using System.Data.Entity;
+
 namespace Aerococina2018.Library.BL
 {
     public class EmpleadosBL
     {
-        public static List<EmpleadosBE> ObtenerListaEmpleados()
+        public static async Task<List<EmpleadosBE>> ObtenerListaEmpleados()
         {
             var lista = new List<EmpleadosBE>();
             try
             {
                 using (DL.Aerococina2018Entities ctx=new DL.Aerococina2018Entities())
                 {
-                    var listaEntity = ctx.empleados.ToList();
+                    var listaEntity = await ctx.empleados.ToListAsync();
                     lista = Mapper.Map<List<empleados>, List<EmpleadosBE>>(listaEntity);
                 }
             }

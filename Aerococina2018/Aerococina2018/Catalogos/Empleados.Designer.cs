@@ -201,7 +201,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Name = "Empleados";
             this.Text = "Empleados";
-            this.Load += new System.EventHandler(this.Empleados_Load);
+            this.Load += new System.EventHandler(this.Empleados_LoadAsync);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
