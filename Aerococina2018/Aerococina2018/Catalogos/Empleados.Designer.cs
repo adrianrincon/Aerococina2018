@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.dgvEmpleados = new System.Windows.Forms.DataGridView();
+            this.numero_empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_registro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNumEmpleado = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -36,10 +40,6 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.rActivo = new System.Windows.Forms.RadioButton();
             this.rBaja = new System.Windows.Forms.RadioButton();
-            this.numero_empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha_registro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importarExcelEmpleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,6 +66,30 @@
             this.dgvEmpleados.Name = "dgvEmpleados";
             this.dgvEmpleados.Size = new System.Drawing.Size(501, 281);
             this.dgvEmpleados.TabIndex = 0;
+            // 
+            // numero_empleado
+            // 
+            this.numero_empleado.DataPropertyName = "num_empleado";
+            this.numero_empleado.HeaderText = "# Empleado";
+            this.numero_empleado.Name = "numero_empleado";
+            // 
+            // nombre
+            // 
+            this.nombre.DataPropertyName = "nombre";
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            // 
+            // estatus
+            // 
+            this.estatus.DataPropertyName = "estatus_descripcion";
+            this.estatus.HeaderText = "Estatus";
+            this.estatus.Name = "estatus";
+            // 
+            // fecha_registro
+            // 
+            this.fecha_registro.DataPropertyName = "fecha_registro";
+            this.fecha_registro.HeaderText = "Fecha";
+            this.fecha_registro.Name = "fecha_registro";
             // 
             // label1
             // 
@@ -112,6 +136,7 @@
             this.btnGuardar.TabIndex = 5;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // rActivo
             // 
@@ -136,30 +161,6 @@
             this.rBaja.TabIndex = 7;
             this.rBaja.Text = "Baja";
             this.rBaja.UseVisualStyleBackColor = true;
-            // 
-            // numero_empleado
-            // 
-            this.numero_empleado.DataPropertyName = "num_empleado";
-            this.numero_empleado.HeaderText = "# Empleado";
-            this.numero_empleado.Name = "numero_empleado";
-            // 
-            // nombre
-            // 
-            this.nombre.DataPropertyName = "nombre";
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
-            // 
-            // estatus
-            // 
-            this.estatus.DataPropertyName = "estatus_descripcion";
-            this.estatus.HeaderText = "Estatus";
-            this.estatus.Name = "estatus";
-            // 
-            // fecha_registro
-            // 
-            this.fecha_registro.DataPropertyName = "fecha_registro";
-            this.fecha_registro.HeaderText = "Fecha";
-            this.fecha_registro.Name = "fecha_registro";
             // 
             // menuStrip1
             // 

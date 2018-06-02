@@ -30,5 +30,25 @@ namespace Aerococina2018.Library.BL
             }
             return lista;
         }
+
+        public static async Task<bool> AgregarEmpleado(EmpleadosBE item)
+        {
+            bool resultado = false;
+            try
+            {
+                using (Library.DL.Aerococina2018Entities ctx = new Aerococina2018Entities())
+                {
+                    var objEntity = Mapper.Map<EmpleadosBE, empleados>(item);
+                    ctx.empleados.Add(objEntity);
+                    await ctx.SaveChangesAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            return resultado;
+        }
     }
 }

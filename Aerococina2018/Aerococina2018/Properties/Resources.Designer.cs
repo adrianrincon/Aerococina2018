@@ -59,15 +59,5 @@ namespace Aerococina2018.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap lg_comet_spinner {
-            get {
-                object obj = ResourceManager.GetObject("lg.comet-spinner", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }

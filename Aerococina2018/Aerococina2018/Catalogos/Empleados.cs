@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Aerococina2018.BE;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,6 +23,35 @@ namespace Aerococina2018.Catalogos
             await ObtenerEmpleados();
         }
 
+        private async void btnGuardar_Click(object sender, EventArgs e)
+        {
+            if (txtNombre.Text != string.Empty && txtNumEmpleado.Text != string.Empty)
+            {
+                EmpleadosBE obj = new EmpleadosBE()
+                {
+                    estatus = rActivo.Checked ? true : false,
+                    fecha_registro = DateTime.Now,
+                    nombre = txtNombre.Text.ToUpper(),
+                    num_empleado = int.Parse(txtNumEmpleado.Text)
+                };
+
+                var result=await Library.BL.EmpleadosBL.AgregarEmpleado(obj);
+                if(result)
+                {
+                    MessageBox.Show("Se guardo correctamente!", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo guardar empleado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Todos los campos son requeridos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private async Task ObtenerEmpleados()
         {
             try
@@ -35,5 +65,7 @@ namespace Aerococina2018.Catalogos
                 throw ex;
             }
         }
+
+
     }
 }
