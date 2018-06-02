@@ -22,3 +22,17 @@ C:\Users\AdrianRincon\Documents\PersonalProjects\Aerococina\Aerococina2018\Aeroc
 C:\Users\AdrianRincon\Documents\PersonalProjects\Aerococina\Aerococina2018\Aerococina2018.BE\obj\Debug\Aerococina2018.BE.csproj.CoreCompileInputs.cache
 C:\Users\AdrianRincon\Documents\PersonalProjects\Aerococina\Aerococina2018\Aerococina2018.BE\obj\Debug\Aerococina2018.BE.dll
 C:\Users\AdrianRincon\Documents\PersonalProjects\Aerococina\Aerococina2018\Aerococina2018.BE\obj\Debug\Aerococina2018.BE.pdb
+C:\Users\mgarcia\Documents\miPrimerProyectoC\Aerococina2018\Aerococina2018.BE\bin\Debug\Aerococina2018.BE.dll.config
+C:\Users\mgarcia\Documents\miPrimerProyectoC\Aerococina2018\Aerococina2018.BE\bin\Debug\Aerococina2018.BE.dll
+C:\Users\mgarcia\Documents\miPrimerProyectoC\Aerococina2018\Aerococina2018.BE\bin\Debug\Aerococina2018.BE.pdb
+C:\Users\mgarcia\Documents\miPrimerProyectoC\Aerococina2018\Aerococina2018.BE\bin\Debug\AutoMapper.dll
+C:\Users\mgarcia\Documents\miPrimerProyectoC\Aerococina2018\Aerococina2018.BE\bin\Debug\EntityFramework.dll
+C:\Users\mgarcia\Documents\miPrimerProyectoC\Aerococina2018\Aerococina2018.BE\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\mgarcia\Documents\miPrimerProyectoC\Aerococina2018\Aerococina2018.BE\bin\Debug\AutoMapper.xml
+C:\Users\mgarcia\Documents\miPrimerProyectoC\Aerococina2018\Aerococina2018.BE\bin\Debug\EntityFramework.xml
+C:\Users\mgarcia\Documents\miPrimerProyectoC\Aerococina2018\Aerococina2018.BE\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\mgarcia\Documents\miPrimerProyectoC\Aerococina2018\Aerococina2018.BE\obj\Debug\Aerococina2018.BE.csprojAssemblyReference.cache
+C:\Users\mgarcia\Documents\miPrimerProyectoC\Aerococina2018\Aerococina2018.BE\obj\Debug\Aerococina2018.BE.csproj.CoreCompileInputs.cache
+C:\Users\mgarcia\Documents\miPrimerProyectoC\Aerococina2018\Aerococina2018.BE\obj\Debug\Aerococina2018.BE.csproj.CopyComplete
+C:\Users\mgarcia\Documents\miPrimerProyectoC\Aerococina2018\Aerococina2018.BE\obj\Debug\Aerococina2018.BE.dll
+C:\Users\mgarcia\Documents\miPrimerProyectoC\Aerococina2018\Aerococina2018.BE\obj\Debug\Aerococina2018.BE.pdb
